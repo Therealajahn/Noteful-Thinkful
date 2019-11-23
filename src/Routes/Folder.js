@@ -1,15 +1,17 @@
 import React from 'react';
+import Data from './Data';
 import { Link } from 'react-router-dom';
 
 function Folder(props) {
   
   return (
+    
     <div className="Main">
      
-       
+    <Data.Consumer>   
      <div className="MainSection">
           <h1>Folder</h1>
-          {props.store.notes.filter((note) => {
+          {Data.notes.filter((note) => {
             if(note.folderId === props.currentFolder){
             return true;
             }else{ 
@@ -17,7 +19,7 @@ function Folder(props) {
             }
           }).map((note)=>{
             return( 
-            <div className="NoteCard">
+            <div key={note.id} className="NoteCard">
             <Link to= {`/notes/${note.id}`}>
               {note.name}
             </Link>
@@ -28,9 +30,10 @@ function Folder(props) {
           })}
         </div>
 
-        
+        </Data.Consumer>  
       </div>
   );
 }
+Folder.contextType = Data;
 
 export default Folder;

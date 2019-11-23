@@ -24,19 +24,20 @@ function Note(props) {
 
          <div className="Section">
          <h1>Note</h1>
-          {/* {props.store.notes.map((note)=>{
-            console.log("in loop",note.id);
+          {props.store.notes.map((note)=>{
             return( 
-            <div className="NoteCard">
-            <Link to= {`/notes/${note.id}`}>
-              {note.name}
-            </Link>
-            <p>{note.modified}</p>
-            <button>Delete Note</button>
-          </div>
+              
+             <div className="NoteCard">
+               <h1>{note.id}</h1>
+          {/* //   <Link to= {`/notes/${note.id}`}>
+          //     {note.name}
+          //   </Link>
+          //   <p>{note.modified}</p>
+          //   <button>Delete Note</button> */}
+           </div>
             )
           })}
-        </div> */}
+        </div>
       </div>
   );
 }

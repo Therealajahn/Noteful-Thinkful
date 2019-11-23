@@ -1,5 +1,4 @@
 import React from 'react';
-import NoteCard from '../components/NoteCard.js';
 import { Link } from 'react-router-dom';
 
 function Main(props) {
@@ -11,7 +10,7 @@ function Main(props) {
           {props.store.notes.map((note)=>{
             console.log("in loop",note.id);
             return( 
-            <div className="NoteCard">
+            <div key={note.id} className="NoteCard">
             <Link to= {`/notes/${note.id}`}>
               {note.name}
             </Link>
