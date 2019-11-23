@@ -1,22 +1,33 @@
-.App {
-  text-align: center;
+.Header{
+  border: 2px solid black;
+  margin-bottom: 5px;
+}
+.FolderSection, .SideBar, .NoteCard, .MainSection{
+  border: 2px solid black;
 }
 
-.App-logo {
-  height: 40vmin;
+.FolderSection {
+  width: 31vw;
+  text-align:center;
+  margin-bottom: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.SideBar{
+  width: 30vw;
+  text-align:center;
+  margin-bottom: 5px;
+  margin-left: 1px;
+  margin-top: 1px;
 }
 
-.App-link {
-  color: #09d3ac;
+.MainSection{
+  position: absolute;
+  width: 65.9vw;
+  margin-top: -122px;
+  margin-left: 32vw;
 }
+
+.NoteCard {
+	margin: 5px 15px;
+}
+
