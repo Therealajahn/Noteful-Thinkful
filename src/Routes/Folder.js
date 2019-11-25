@@ -1,17 +1,19 @@
 import React from 'react';
-import Data from './Data';
+import DataContext from '../DataContext';
 import { Link } from 'react-router-dom';
+import Data from '../Data';
 
 function Folder(props) {
   
   return (
     
     <div className="Main">
-     
-    <Data.Consumer>   
+      {/* <DataContext.Consumer> */}
+    
+       
      <div className="MainSection">
           <h1>Folder</h1>
-          {Data.notes.filter((note) => {
+          {props.store.notes.filter((note) => {
             if(note.folderId === props.currentFolder){
             return true;
             }else{ 
@@ -30,10 +32,11 @@ function Folder(props) {
           })}
         </div>
 
-        </Data.Consumer>  
+        {/* </DataContext.Consumer>     */}
       </div>
   );
 }
-Folder.contextType = Data;
+
+
 
 export default Folder;
