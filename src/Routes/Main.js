@@ -4,10 +4,13 @@ import { Link } from 'react-router-dom';
 function Main(props) {
   return (
     <div className="Main">
-    
-<div className="MainSection">
-<h1>Main</h1>
-          {props.store.notes.map((note)=>{
+    <Link to="/">
+     <h1 className="Header">Noteful</h1> 
+    </Link> 
+  
+  <div className="MainSection">
+
+          {props.notes.map((note)=>{
             console.log("in loop",note.id);
             return( 
             <div key={note.id} className="NoteCard">
@@ -19,6 +22,19 @@ function Main(props) {
           </div>
             )
           })}
+        </div>
+
+        <div className="FolderSection">
+          {props.folders.map((folder)=>{
+              return( 
+                <div key={folder.id} className="SideBar">
+                  <Link to={`/folder/${folder.id}`}>
+                    {folder.name}
+                  </Link>
+                </div>
+              );
+          })}
+          <button>Add Folder</button>
         </div>
       </div>
   );

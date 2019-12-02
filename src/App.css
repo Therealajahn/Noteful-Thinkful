@@ -1,3 +1,8 @@
+body{
+  margin:0;
+  padding:0;
+}
+
 .Header{
   border: 2px solid black;
   margin-bottom: 5px;
@@ -23,7 +28,6 @@
 .MainSection{
   position: absolute;
   width: 65.9vw;
-  margin-top: -122px;
   margin-left: 32vw;
 }
 

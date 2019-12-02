@@ -13,7 +13,8 @@ function Folder(props) {
        
      <div className="MainSection">
           <h1>Folder</h1>
-          {props.store.notes.filter((note) => {
+          
+          {props.notes.filter((note) => {
             if(note.folderId === props.currentFolder){
             return true;
             }else{ 
@@ -30,6 +31,18 @@ function Folder(props) {
           </div>
             )
           })}
+        </div>
+        <div className="FolderSection">
+          {props.folders.map((folder)=>{
+              return( 
+                <div key={folder.id} className="SideBar">
+                  <Link to={`/folder/${folder.id}`}>
+                    {folder.name}
+                  </Link>
+                </div>
+              );
+          })}
+          <button>Add Folder</button>
         </div>
 
         {/* </DataContext.Consumer>     */}
